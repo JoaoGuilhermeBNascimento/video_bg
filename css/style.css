@@ -18,7 +18,12 @@
   align-items: center;
   background: #111;
   color: white;
+  transition: 0.8s;
   z-index: 2;
+}
+/* If its active, it will be moved 300px for right */
+.showcase.active {
+  right: 300px;
 }
 
 .showcase header {
@@ -31,6 +36,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #03a9f4;
+  mix-blend-mode: overlay;
 }
 
 .logo {
@@ -57,16 +81,110 @@
   background-position: center;
 }
 
-.showcase video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
+.text {
+  position: relative;
+  z-index: 2;
 }
 
-.text {
-    position: relative;
+.text h2 {
+  font-size: 5em;
+  font-weight: 800;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text h3 {
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.text p {
+  font-size: 1.1em;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+
+.text a {
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #111;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.7s;
+}
+
+.text a:hover {
+  letter-spacing: 10px;
+}
+
+.social {
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li a {
+  display: inline-block;
+  filter: invert(1);
+  margin-right: 20px;
+  transition: 0.7s;
+  transform: scale(0.5);
+}
+/* TranslateY, positive will go down and negative will go up  */
+.social li a:hover {
+  transform: scale(0.5) translateY(-15px);
+  filter: contrast(200%);
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul {
+  position: relative;
+  list-style: none;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+  transition: all 0.4s ease-in-out;
+}
+.menu ul li a:hover {
+  color: #03a9f4;
+}
+
+@media (max-width: 798px) {
+  .showcase,
+  .showcase header {
+    padding: 40px;
+  }
+
+  .text h2 {
+    font-size: 3em;
+  }
+  .text h3 {
+    font-size: 2em;
+  }
 }

@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <section class="showcase">
+    <section class="showcase ">
         <header>
             <h2 class="logo">
                 Travel
             </h2>
-            <div class="toggle">
+            <div class="toggle ">
             </div>
         </header>
         <video src="Assets/video.mp4" muted loop autoplay></video>
@@ -31,9 +31,9 @@
         </div>
 
         <ul class="social">
-            <li><img src="Assets/facebook.png" alt=""></li>
-            <li><img src="Assets/instagram.png" alt=""></li>
-            <li><img src="Assets/twitter.png" alt=""></li>
+            <li><a href="#"><img src="Assets/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="Assets/instagram.png" alt=""></a></li>
+            <li><a href="#"><img src="Assets/twitter.png" alt=""></a></li>
         </ul>
     </section>
     <div class="menu">
@@ -45,6 +45,15 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
+    <script>
+        const menuToggle = document.querySelector(".toggle")
+        const showcase = document.querySelector(".showcase")
+
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.toggle('active')
+            showcase.classList.toggle('active')
+        })
+    </script>
 
 </body>
 
